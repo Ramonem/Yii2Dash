@@ -24,7 +24,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_descuento',
+            [
+             'attribute' => 'id_descuento',
+             'value' =>  'idDescuento.nombre' 
+            ],
+             [
+             'attribute' => 'idDescuento.descuento',
+             'value' =>  'idDescuento.descuento' 
+            ],
             'email:email',
             'rating',
 

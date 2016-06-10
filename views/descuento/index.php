@@ -21,9 +21,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'id_descuento',
+        'columns' => [     
+              ['class' => 'yii\grid\SerialColumn'],
+              'nombre',
+             'descuento',
             [
              'attribute' => 'id_empresa',
              'value' =>  'idEmpresa.nombre_empresa'
@@ -31,28 +32,28 @@ $this->params['breadcrumbs'][] = $this->title;
             [
              'attribute' => 'id_convenio',
              'value' =>  'idConvenio.nombre_convenio'
-            ],
-            [
-             'attribute' => 'id_campana',
-             'value' =>  'idCampana.nombre'
-            ],
-            [
+            ],           
+            // 'link',
+            // 'descripcion:ntext',
+            // 'imagen',             
+            // 'contacto',
+            // 'gasto',
+             [
              'attribute' => 'id_subcat',
              'value' =>  'idSubcat.nombre_subcat'
             ],
+         
+              [
+             'attribute' => 'id_campana',
+             'value' =>  'idCampana.nombre'
+            ],
            
-            // 'nombre',
-            // 'descuento',
-            // 'link',
-            // 'descripcion:ntext',
-            // 'imagen',
-            // 'vigencia_inicio',
-            // 'vigencia_fin',
-            // 'contacto',
-            // 'gasto',
-            // 'creado',
+            'vigencia_inicio',
+             'vigencia_fin',
+               'creado',
 
             ['class' => 'yii\grid\ActionColumn'],
+
         ],
     ]); ?>
 </div>
