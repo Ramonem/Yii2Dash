@@ -77,12 +77,12 @@ class Descuento extends \yii\db\ActiveRecord
     {
         return [
             'id_descuento' => 'Id Descuento',
-            'id_empresa' => 'Id Empresa',
-            'id_convenio' => 'Id Convenio',
-            'id_campana' => 'Id Campana',
-            'id_subcat' => 'Id Subcat',
+            'id_empresa' => 'Empresa',
+            'id_convenio' => 'Convenio',
+            'id_campana' => 'Campana',
+            'id_subcat' => 'Subcategoria',
             'nombre' => 'Nombre',
-            'descuento' => 'Descuento',
+            'descuento' => 'Descuento %',
             'link' => 'Link',
             'descripcion' => 'Descripcion',
             'imagen' => 'Imagen',

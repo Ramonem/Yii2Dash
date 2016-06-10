@@ -18,8 +18,8 @@ class DescuentoSearch extends Descuento
     public function rules()
     {
         return [
-            [['id_descuento', 'id_empresa', 'id_convenio', 'id_campana', 'id_subcat', 'gasto'], 'integer'],
-            [['nombre', 'descuento', 'link', 'descripcion', 'imagen', 'vigencia_inicio', 'vigencia_fin', 'contacto', 'creado'], 'safe'],
+            [['gasto'], 'integer'],
+            [['nombre', 'descuento', 'link', 'descripcion', 'imagen', 'vigencia_inicio', 'vigencia_fin', 'contacto', 'creado', 'id_descuento', 'id_empresa', 'id_convenio', 'id_campana', 'id_subcat'], 'safe'],
         ];
     }
 
@@ -42,6 +42,10 @@ class DescuentoSearch extends Descuento
     public function search($params)
     {
         $query = Descuento::find();
+        $query->joinWith(['idEmpresa']);
+        $query->joinWith(['idCampana']);
+        $query->joinWith(['idConvenio']);
+        $query->joinWith(['idSubcat']);
 
         // add conditions that should always apply here
 
@@ -60,10 +64,6 @@ class DescuentoSearch extends Descuento
         // grid filtering conditions
         $query->andFilterWhere([
             'id_descuento' => $this->id_descuento,
-            'id_empresa' => $this->id_empresa,
-            'id_convenio' => $this->id_convenio,
-            'id_campana' => $this->id_campana,
-            'id_subcat' => $this->id_subcat,
             'vigencia_inicio' => $this->vigencia_inicio,
             'vigencia_fin' => $this->vigencia_fin,
             'gasto' => $this->gasto,
@@ -75,7 +75,11 @@ class DescuentoSearch extends Descuento
             ->andFilterWhere(['like', 'link', $this->link])
             ->andFilterWhere(['like', 'descripcion', $this->descripcion])
             ->andFilterWhere(['like', 'imagen', $this->imagen])
-            ->andFilterWhere(['like', 'contacto', $this->contacto]);
+            ->andFilterWhere(['like', 'contacto', $this->contacto])
+            ->andFilterWhere(['like', 'empresa.nombre_empresa', $this->id_empresa])
+            ->andFilterWhere(['like', 'convenio.nombre_convenio', $this->id_convenio])
+            ->andFilterWhere(['like', 'campana.nombre', $this->id_campana])
+            ->andFilterWhere(['like', 'subcategoria.nombre_subcat', $this->id_subcat]);
 
         return $dataProvider;
     }
