@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'email_ue:email',
-            'id_empresa',
+            'idEmpresa.nombre_empresa',
             'nombre',
             'password',
         ],

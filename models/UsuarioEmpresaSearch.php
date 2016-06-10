@@ -18,8 +18,8 @@ class UsuarioEmpresaSearch extends UsuarioEmpresa
     public function rules()
     {
         return [
-            [['email_ue', 'nombre', 'password'], 'safe'],
-            [['id_empresa'], 'integer'],
+            [['email_ue', 'nombre', 'password', 'id_empresa'], 'safe'],
+            //[['id_empresa'], 'integer'],
         ];
     }
 
@@ -57,14 +57,16 @@ class UsuarioEmpresaSearch extends UsuarioEmpresa
             return $dataProvider;
         }
 
+
+         $query->joinWith('idEmpresa');
+
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id_empresa' => $this->id_empresa,
-        ]);
+
 
         $query->andFilterWhere(['like', 'email_ue', $this->email_ue])
             ->andFilterWhere(['like', 'nombre', $this->nombre])
-            ->andFilterWhere(['like', 'password', $this->password]);
+            ->andFilterWhere(['like', 'password', $this->password])
+            ->andFilterWhere(['like', 'empresa.nombre_empresa', $this->id_empresa]);
 
         return $dataProvider;
     }

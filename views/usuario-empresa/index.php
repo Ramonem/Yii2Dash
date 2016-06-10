@@ -25,11 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'email_ue:email',
-            /*[
+            [
               'attribute' => 'id_empresa',
-              'value' => 'getNameEmpresa()'
-            ],*/
-            'id_empresa',
+              'value' => 'idEmpresa.nombre_empresa'
+            ],
             'nombre',
             //'password',
 
