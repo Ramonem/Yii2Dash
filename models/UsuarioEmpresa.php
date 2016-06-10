@@ -46,7 +46,7 @@ class UsuarioEmpresa extends \yii\db\ActiveRecord
     {
         return [
             'email_ue' => 'Email Ue',
-            'id_empresa' => 'Id Empresa',
+            'id_empresa' => 'Empresa',
             'nombre' => 'Nombre',
             'password' => 'Password',
         ];

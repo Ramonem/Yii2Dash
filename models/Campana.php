@@ -35,6 +35,7 @@ class Campana extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['nombre', 'inicio', 'fin'], 'required'],
             [['presupuesto_campana', 'id_presupuesto'], 'integer'],
             [['inicio', 'fin'], 'safe'],
             [['email_ue'], 'string', 'max' => 150],

@@ -35,6 +35,7 @@ class Ubicacion extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id_empresa', 'direccion', 'lat', 'lon'], 'required'],
             [['id_empresa'], 'integer'],
             [['lat', 'lon'], 'number'],
             [['direccion'], 'string', 'max' => 250],

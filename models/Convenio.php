@@ -30,6 +30,7 @@ class Convenio extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['nombre_convenio'], 'required'],
             [['id_empresa'], 'integer'],
             [['nombre_convenio'], 'string', 'max' => 150],
             [['id_empresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['id_empresa' => 'id_empresa']],

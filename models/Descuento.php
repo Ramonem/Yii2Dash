@@ -56,6 +56,7 @@ class Descuento extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['id_empresa', 'id_convenio', 'id_campana', 'id_subcat', 'nombre', 'descuento', 'link', 'imagen', 'vigencia_inicio', 'vigencia_fin', 'creado'], 'required'],
             [['id_empresa', 'id_convenio', 'id_campana', 'id_subcat', 'gasto'], 'integer'],
             [['descripcion'], 'string'],
             [['vigencia_inicio', 'vigencia_fin', 'creado'], 'safe'],
@@ -77,12 +78,12 @@ class Descuento extends \yii\db\ActiveRecord
     {
         return [
             'id_descuento' => 'Id Descuento',
-            'id_empresa' => 'Empresa',
-            'id_convenio' => 'Convenio',
-            'id_campana' => 'Campana',
-            'id_subcat' => 'Subcategoria',
+            'id_empresa' => 'Id Empresa',
+            'id_convenio' => 'Id Convenio',
+            'id_campana' => 'Id Campana',
+            'id_subcat' => 'Id Subcat',
             'nombre' => 'Nombre',
-            'descuento' => 'Descuento %',
+            'descuento' => 'Descuento',
             'link' => 'Link',
             'descripcion' => 'Descripcion',
             'imagen' => 'Imagen',

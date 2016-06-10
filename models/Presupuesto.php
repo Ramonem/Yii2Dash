@@ -34,6 +34,7 @@ class Presupuesto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['nombre', 'fecha_inicio', 'fecha_final'], 'required'],
             [['presupuesto'], 'integer'],
             [['fecha_inicio', 'fecha_final'], 'safe'],
             [['nombre'], 'string', 'max' => 100],

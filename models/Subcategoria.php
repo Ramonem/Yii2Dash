@@ -31,6 +31,7 @@ class Subcategoria extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['nombre_subcat'], 'required'],
             [['nombre_subcat'], 'string', 'max' => 150],
         ];
     }
