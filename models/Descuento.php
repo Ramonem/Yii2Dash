@@ -12,7 +12,9 @@ use Yii;
  * @property integer $id_convenio
  * @property integer $id_campana
  * @property integer $id_subcat
+ * @property string $nombre
  * @property string $descuento
+ * @property string $link
  * @property string $descripcion
  * @property string $imagen
  * @property string $vigencia_inicio
@@ -57,7 +59,9 @@ class Descuento extends \yii\db\ActiveRecord
             [['id_empresa', 'id_convenio', 'id_campana', 'id_subcat', 'gasto'], 'integer'],
             [['descripcion'], 'string'],
             [['vigencia_inicio', 'vigencia_fin', 'creado'], 'safe'],
+            [['nombre'], 'string', 'max' => 30],
             [['descuento'], 'string', 'max' => 150],
+            [['link'], 'string', 'max' => 100],
             [['imagen', 'contacto'], 'string', 'max' => 250],
             [['id_empresa'], 'exist', 'skipOnError' => true, 'targetClass' => Empresa::className(), 'targetAttribute' => ['id_empresa' => 'id_empresa']],
             [['id_campana'], 'exist', 'skipOnError' => true, 'targetClass' => Campana::className(), 'targetAttribute' => ['id_campana' => 'id_campana']],
@@ -77,7 +81,9 @@ class Descuento extends \yii\db\ActiveRecord
             'id_convenio' => 'Id Convenio',
             'id_campana' => 'Id Campana',
             'id_subcat' => 'Id Subcat',
+            'nombre' => 'Nombre',
             'descuento' => 'Descuento',
+            'link' => 'Link',
             'descripcion' => 'Descripcion',
             'imagen' => 'Imagen',
             'vigencia_inicio' => 'Vigencia Inicio',

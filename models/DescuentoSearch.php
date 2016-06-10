@@ -19,7 +19,7 @@ class DescuentoSearch extends Descuento
     {
         return [
             [['id_descuento', 'id_empresa', 'id_convenio', 'id_campana', 'id_subcat', 'gasto'], 'integer'],
-            [['descuento', 'descripcion', 'imagen', 'vigencia_inicio', 'vigencia_fin', 'contacto', 'creado'], 'safe'],
+            [['nombre', 'descuento', 'link', 'descripcion', 'imagen', 'vigencia_inicio', 'vigencia_fin', 'contacto', 'creado'], 'safe'],
         ];
     }
 
@@ -70,7 +70,9 @@ class DescuentoSearch extends Descuento
             'creado' => $this->creado,
         ]);
 
-        $query->andFilterWhere(['like', 'descuento', $this->descuento])
+        $query->andFilterWhere(['like', 'nombre', $this->nombre])
+            ->andFilterWhere(['like', 'descuento', $this->descuento])
+            ->andFilterWhere(['like', 'link', $this->link])
             ->andFilterWhere(['like', 'descripcion', $this->descripcion])
             ->andFilterWhere(['like', 'imagen', $this->imagen])
             ->andFilterWhere(['like', 'contacto', $this->contacto]);

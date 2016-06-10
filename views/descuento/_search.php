@@ -25,7 +25,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_subcat') ?>
 
+    <?php // echo $form->field($model, 'nombre') ?>
+
     <?php // echo $form->field($model, 'descuento') ?>
+
+    <?php // echo $form->field($model, 'link') ?>
 
     <?php // echo $form->field($model, 'descripcion') ?>
 

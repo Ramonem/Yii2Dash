@@ -20,7 +20,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id_subcat')->textInput() ?>
 
+    <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'descuento')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'link')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'descripcion')->textarea(['rows' => 6]) ?>
 
