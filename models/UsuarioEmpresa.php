@@ -67,4 +67,8 @@ class UsuarioEmpresa extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Empresa::className(), ['id_empresa' => 'id_empresa']);
     }
+
+    /*public function getNameEmpresa(){
+      return $this->empresa->nombre_empresa;
+    }*/
 }
