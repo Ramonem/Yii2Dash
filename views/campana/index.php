@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CampanaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Campanas';
+$this->title = 'Campañas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="campana-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Campana', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear campaña', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,14 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_campana',
-            'email_ue:email',
+            'id_campana',            
             'nombre',
-            'descripcion',
+            //'descripcion',
             'presupuesto_campana',
-            // 'id_presupuesto',
-            // 'inicio',
-            // 'fin',
+            [
+             'attribute' => 'id_presupuesto',
+             'value' =>  'idPresupuesto.nombre',
+            ],
+            'inicio',
+            'fin',
+            'email_ue:email',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -18,8 +18,8 @@ class ConvenioSearch extends Convenio
     public function rules()
     {
         return [
-            [['id_convenio', 'id_empresa'], 'integer'],
-            [['nombre_convenio'], 'safe'],
+            [['id_convenio'], 'integer'],
+            [['nombre_convenio', 'id_empresa'], 'safe'],
         ];
     }
 
@@ -42,6 +42,7 @@ class ConvenioSearch extends Convenio
     public function search($params)
     {
         $query = Convenio::find();
+         $query->joinWith(['idEmpresa']);
 
         // add conditions that should always apply here
 
@@ -60,10 +61,10 @@ class ConvenioSearch extends Convenio
         // grid filtering conditions
         $query->andFilterWhere([
             'id_convenio' => $this->id_convenio,
-            'id_empresa' => $this->id_empresa,
         ]);
 
-        $query->andFilterWhere(['like', 'nombre_convenio', $this->nombre_convenio]);
+        $query->andFilterWhere(['like', 'nombre_convenio', $this->nombre_convenio])
+            ->andFilterWhere(['like', 'empresa.nombre_empresa', $this->id_empresa]);
 
         return $dataProvider;
     }

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\UsuarioAdminSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Usuario Admins';
+$this->title = 'Usuarios Admin';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-admin-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Usuario Admin', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear usuarios admin', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,

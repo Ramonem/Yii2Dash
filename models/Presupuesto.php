@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+
 use Yii;
 
 /**
@@ -34,7 +35,7 @@ class Presupuesto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'fecha_inicio', 'fecha_final'], 'required'],
+            [['nombre', 'fecha_inicio', 'fecha_final','email_ue', 'presupuesto'], 'required'],
             [['presupuesto'], 'integer'],
             [['fecha_inicio', 'fecha_final'], 'safe'],
             [['nombre'], 'string', 'max' => 100],
@@ -50,11 +51,11 @@ class Presupuesto extends \yii\db\ActiveRecord
     {
         return [
             'id_presupuesto' => 'Id Presupuesto',
-            'nombre' => 'Nombre',
+            'nombre' => 'Nombre presupuesto',
             'presupuesto' => 'Presupuesto',
-            'fecha_inicio' => 'Fecha Inicio',
-            'fecha_final' => 'Fecha Final',
-            'email_ue' => 'Email Ue',
+            'fecha_inicio' => 'Fecha inicio',
+            'fecha_final' => 'Fecha final',
+            'email_ue' => 'Usuario empresa',
         ];
     }
 

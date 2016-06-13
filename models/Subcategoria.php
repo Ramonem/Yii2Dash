@@ -42,8 +42,8 @@ class Subcategoria extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_subcat' => 'Id Subcat',
-            'nombre_subcat' => 'Nombre Subcat',
+            'id_subcat' => 'Id subcategoria',
+            'nombre_subcat' => 'Nombre subcategoria',
         ];
     }
 

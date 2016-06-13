@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\RecordarSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Recordars';
+$this->title = 'Descuentos recordados';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="recordar-index">
@@ -15,19 +15,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
+    <!-- <p>
         <?= Html::a('Create Recordar', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    </p> -->
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_descuento',
+            [
+             'attribute' => 'id_descuento',
+             'value' =>  'idDescuento.nombre'
+            ],
             'email:email',
 
-            ['class' => 'yii\grid\ActionColumn'],
+           // ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>

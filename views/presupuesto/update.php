@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Presupuesto */
 
-$this->title = 'Update Presupuesto: ' . $model->id_presupuesto;
+$this->title = 'Actualizar Presupuesto: ' . $model->id_presupuesto;
 $this->params['breadcrumbs'][] = ['label' => 'Presupuestos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_presupuesto, 'url' => ['view', 'id' => $model->id_presupuesto]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="presupuesto-update">
 

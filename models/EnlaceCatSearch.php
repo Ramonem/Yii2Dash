@@ -18,7 +18,7 @@ class EnlaceCatSearch extends EnlaceCat
     public function rules()
     {
         return [
-            [['id_subcat', 'id_cat'], 'integer'],
+            [['id_subcat', 'id_cat'], 'safe'],
         ];
     }
 
@@ -41,6 +41,8 @@ class EnlaceCatSearch extends EnlaceCat
     public function search($params)
     {
         $query = EnlaceCat::find();
+        $query->joinWith(['idCat']);
+        $query->joinWith(['idSubcat']);
 
         // add conditions that should always apply here
 
@@ -56,11 +58,8 @@ class EnlaceCatSearch extends EnlaceCat
             return $dataProvider;
         }
 
-        // grid filtering conditions
-        $query->andFilterWhere([
-            'id_subcat' => $this->id_subcat,
-            'id_cat' => $this->id_cat,
-        ]);
+         $query->andFilterWhere(['like', 'categoria.nombre_cat', $this->id_cat])
+            ->andFilterWhere(['like', 'subcategoria.nombre_subcat', $this->id_subcat]);
 
         return $dataProvider;
     }

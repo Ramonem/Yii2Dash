@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Campana */
 
-$this->title = 'Create Campana';
+$this->title = 'Crear campaña';
 $this->params['breadcrumbs'][] = ['label' => 'Campanas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

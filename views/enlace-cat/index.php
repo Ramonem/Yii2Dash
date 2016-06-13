@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\EnlaceCatSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Enlace Cats';
+$this->title = 'Enlace categorias';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="enlace-cat-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Enlace Cat', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear enlace cat', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -24,9 +24,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_subcat',
-            'id_cat',
+            [
+             'attribute' => 'id_cat',
+             'value' =>  'idCat.nombre_cat'
+            ],
 
+            [
+             'attribute' => 'id_subcat',
+             'value' =>  'idSubcat.nombre_subcat'
+            ],
+         
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

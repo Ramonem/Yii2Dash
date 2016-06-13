@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\Empresa;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Ubicacion */
@@ -12,7 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'id_empresa')->textInput() ?>
+    <?= $form->field($model, 'id_empresa')->dropDownList(ArrayHelper::map(Empresa::find()->all(), 'id_empresa', 'nombre_empresa'), 
+             ['prompt'=>'- Elige una empresa -']) ?>
 
     <?= $form->field($model, 'direccion')->textInput(['maxlength' => true]) ?>
 
@@ -21,7 +24,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'lon')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

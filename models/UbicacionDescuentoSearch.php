@@ -18,7 +18,7 @@ class UbicacionDescuentoSearch extends UbicacionDescuento
     public function rules()
     {
         return [
-            [['id_ubicacion', 'id_descuento'], 'integer'],
+            [['id_ubicacion', 'id_descuento'], 'safe'],
         ];
     }
 
@@ -41,6 +41,8 @@ class UbicacionDescuentoSearch extends UbicacionDescuento
     public function search($params)
     {
         $query = UbicacionDescuento::find();
+         $query->joinWith(['idDescuento']);
+          $query->joinWith(['idUbicacion']);
 
         // add conditions that should always apply here
 
@@ -57,10 +59,8 @@ class UbicacionDescuentoSearch extends UbicacionDescuento
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id_ubicacion' => $this->id_ubicacion,
-            'id_descuento' => $this->id_descuento,
-        ]);
+        $query->andFilterWhere(['like', 'ubicacion.direccion', $this->id_ubicacion])
+        ->andFilterWhere(['like', 'descuento.nombre', $this->id_descuento]);
 
         return $dataProvider;
     }

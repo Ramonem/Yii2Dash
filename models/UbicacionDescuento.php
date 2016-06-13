@@ -42,8 +42,8 @@ class UbicacionDescuento extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_ubicacion' => 'Id Ubicacion',
-            'id_descuento' => 'Id Descuento',
+            'id_ubicacion' => 'Ubicación',
+            'id_descuento' => 'Título Descuento',
         ];
     }
 

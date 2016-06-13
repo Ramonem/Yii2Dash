@@ -17,14 +17,12 @@ use app\models\Empresa;
 
     <?= $form->field($model, 'id_empresa')->dropDownList(ArrayHelper::map(Empresa::find()->all(), 'id_empresa', 'nombre_empresa')) ?>
 
-    <?= $form->field($model, 'nombre')->textInput(['maxlength' => true]) ?>
-
     <?= $form->field($model, 'email_ue')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::submitButton($model->isNewRecord ? 'Crear' : 'Actualizar', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

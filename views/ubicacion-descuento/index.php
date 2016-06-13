@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\UbicacionDescuentoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Ubicacion Descuentos';
+$this->title = 'Ubicación descuentos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ubicacion-descuento-index">
@@ -16,16 +16,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Ubicacion Descuento', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear ubicación descuento', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id_ubicacion',
-            'id_descuento',
+            
+             [
+             'attribute' => 'id_descuento',
+             'value' =>  'idDescuento.nombre'
+            ],
+            [
+             'attribute' => 'id_ubicacion',
+             'value' =>  'idUbicacion.direccion'
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

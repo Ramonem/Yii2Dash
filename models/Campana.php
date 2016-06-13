@@ -35,7 +35,7 @@ class Campana extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nombre', 'inicio', 'fin'], 'required'],
+            [['nombre', 'inicio', 'fin', 'presupuesto_campana', 'email_ue', 'descripcion', 'id_presupuesto'], 'required'],
             [['presupuesto_campana', 'id_presupuesto'], 'integer'],
             [['inicio', 'fin'], 'safe'],
             [['email_ue'], 'string', 'max' => 150],
@@ -51,14 +51,14 @@ class Campana extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_campana' => 'Id Campana',
-            'email_ue' => 'Email Ue',
-            'nombre' => 'Nombre',
+            'id_campana' => 'Id Campaña',
+            'email_ue' => 'Usuario empresa',
+            'nombre' => 'Nombre campaña',
             'descripcion' => 'Descripcion',
-            'presupuesto_campana' => 'Presupuesto Campana',
-            'id_presupuesto' => 'Id Presupuesto',
-            'inicio' => 'Inicio',
-            'fin' => 'Fin',
+            'presupuesto_campana' => 'Presupuesto campaña',
+            'id_presupuesto' => 'Presupuesto',
+            'inicio' => 'Fecha inicio',
+            'fin' => 'Fecha final',
         ];
     }
 

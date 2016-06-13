@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\UbicacionDescuento */
 
-$this->title = 'Update Ubicacion Descuento: ' . $model->id_ubicacion;
-$this->params['breadcrumbs'][] = ['label' => 'Ubicacion Descuentos', 'url' => ['index']];
+$this->title = 'Actualizar ubicación descuento: ' . $model->id_ubicacion;
+$this->params['breadcrumbs'][] = ['label' => 'Ubicación descuentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_ubicacion, 'url' => ['view', 'id_ubicacion' => $model->id_ubicacion, 'id_descuento' => $model->id_descuento]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="ubicacion-descuento-update">
 

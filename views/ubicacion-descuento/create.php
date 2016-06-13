@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\UbicacionDescuento */
 
-$this->title = 'Create Ubicacion Descuento';
-$this->params['breadcrumbs'][] = ['label' => 'Ubicacion Descuentos', 'url' => ['index']];
+$this->title = 'Crear ubicación descuento';
+$this->params['breadcrumbs'][] = ['label' => 'Ubicación descuentos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ubicacion-descuento-create">

@@ -43,8 +43,8 @@ class Empresa extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_empresa' => 'Id Empresa',
-            'nombre_empresa' => 'Nombre Empresa',
+            'id_empresa' => 'Id empresa',
+            'nombre_empresa' => 'Nombre empresa',
         ];
     }
 

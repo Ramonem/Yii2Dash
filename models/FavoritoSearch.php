@@ -18,8 +18,7 @@ class FavoritoSearch extends Favorito
     public function rules()
     {
         return [
-            [['id_descuento'], 'integer'],
-            [['email'], 'safe'],
+            [['email', 'id_descuento'], 'safe'],
         ];
     }
 
@@ -42,6 +41,7 @@ class FavoritoSearch extends Favorito
     public function search($params)
     {
         $query = Favorito::find();
+        $query->joinWith(['idDescuento']);
 
         // add conditions that should always apply here
 
@@ -58,11 +58,9 @@ class FavoritoSearch extends Favorito
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id_descuento' => $this->id_descuento,
-        ]);
 
-        $query->andFilterWhere(['like', 'email', $this->email]);
+        $query->andFilterWhere(['like', 'email', $this->email])
+        ->andFilterWhere(['like', 'descuento.nombre', $this->id_descuento]);
 
         return $dataProvider;
     }

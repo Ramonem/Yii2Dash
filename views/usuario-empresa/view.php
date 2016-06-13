@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\UsuarioEmpresa */
 
-$this->title = $model->email_ue;
-$this->params['breadcrumbs'][] = ['label' => 'Usuario Empresas', 'url' => ['index']];
+$this->title = 'Detalle';
+$this->params['breadcrumbs'][] = ['label' => 'Usuario empresas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="usuario-empresa-view">
@@ -15,8 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->email_ue], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->email_ue], [
+        <?= Html::a('Actualizar', ['update', 'id' => $model->email_ue], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Eliminar', ['delete', 'id' => $model->email_ue], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -28,9 +28,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'email_ue:email',
             'idEmpresa.nombre_empresa',
-            'nombre',
+            'email_ue:email',            
             'password',
         ],
     ]) ?>

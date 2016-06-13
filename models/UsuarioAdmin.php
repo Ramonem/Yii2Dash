@@ -30,7 +30,7 @@ class UsuarioAdmin extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email_admin'], 'required'],
+            [['email_admin', 'password', 'rol'], 'required'],
             [['email_admin'], 'string', 'max' => 150],
             [['password'], 'string', 'max' => 100],
             [['rol'], 'string', 'max' => 1],

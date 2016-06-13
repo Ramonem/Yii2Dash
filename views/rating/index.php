@@ -15,9 +15,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
+  <!--   <p>
         <?= Html::a('Create Rating', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    </p> -->
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'rating',
 
-            ['class' => 'yii\grid\ActionColumn'],
+           // ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>

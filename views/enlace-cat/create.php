@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\EnlaceCat */
 
-$this->title = 'Create Enlace Cat';
-$this->params['breadcrumbs'][] = ['label' => 'Enlace Cats', 'url' => ['index']];
+$this->title = 'Crear enlace cat';
+$this->params['breadcrumbs'][] = ['label' => 'Enlace categorias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="enlace-cat-create">

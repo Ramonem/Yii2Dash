@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Subcategoria */
 
-$this->title = 'Update Subcategoria: ' . $model->id_subcat;
+$this->title = 'Actualizar Subcategoria: ' . $model->id_subcat;
 $this->params['breadcrumbs'][] = ['label' => 'Subcategorias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_subcat, 'url' => ['view', 'id' => $model->id_subcat]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="subcategoria-update">
 

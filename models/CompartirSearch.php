@@ -18,8 +18,8 @@ class CompartirSearch extends Compartir
     public function rules()
     {
         return [
-            [['id_descuento', 'contador'], 'integer'],
-            [['email'], 'safe'],
+            [['contador'], 'integer'],
+            [['email', 'id_descuento'], 'safe'],
         ];
     }
 
@@ -42,6 +42,7 @@ class CompartirSearch extends Compartir
     public function search($params)
     {
         $query = Compartir::find();
+         $query->joinWith(['idDescuento']);
 
         // add conditions that should always apply here
 
@@ -59,11 +60,11 @@ class CompartirSearch extends Compartir
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_descuento' => $this->id_descuento,
             'contador' => $this->contador,
         ]);
 
-        $query->andFilterWhere(['like', 'email', $this->email]);
+        $query->andFilterWhere(['like', 'email', $this->email])
+                     ->andFilterWhere(['like', 'descuento.nombre', $this->id_descuento]);
 
         return $dataProvider;
     }

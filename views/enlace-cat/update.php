@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\EnlaceCat */
 
-$this->title = 'Update Enlace Cat: ' . $model->id_subcat;
-$this->params['breadcrumbs'][] = ['label' => 'Enlace Cats', 'url' => ['index']];
+$this->title = 'Actualizar enlace cat: ' . $model->id_subcat;
+$this->params['breadcrumbs'][] = ['label' => 'Enlace categorias', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_subcat, 'url' => ['view', 'id_subcat' => $model->id_subcat, 'id_cat' => $model->id_cat]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'Actualizar';
 ?>
 <div class="enlace-cat-update">
 

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\CompartirSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Compartirs';
+$this->title = 'Descuentos compartidos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="compartir-index">
@@ -15,20 +15,23 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
+   <!--  <p>
         <?= Html::a('Create Compartir', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    </p> -->
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id_descuento',
+            [
+             'attribute' => 'id_descuento',
+             'value' =>  'idDescuento.nombre'
+            ],
             'email:email',
             'contador',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            //['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>

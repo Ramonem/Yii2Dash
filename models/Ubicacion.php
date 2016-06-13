@@ -49,11 +49,11 @@ class Ubicacion extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_ubicacion' => 'Id Ubicacion',
-            'id_empresa' => 'Id Empresa',
-            'direccion' => 'Direccion',
-            'lat' => 'Lat',
-            'lon' => 'Lon',
+            'id_ubicacion' => 'Id Ubicación',
+            'id_empresa' => 'Empresa',
+            'direccion' => 'Dirección',
+            'lat' => 'Latitud',
+            'lon' => 'Longitud',
         ];
     }
 

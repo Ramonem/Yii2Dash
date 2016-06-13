@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Presupuesto', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear presupuesto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'presupuesto',
             'fecha_inicio',
             'fecha_final',
-            // 'email_ue:email',
+            'email_ue:email',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -42,8 +42,8 @@ class EnlaceCat extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id_subcat' => 'Id Subcat',
-            'id_cat' => 'Id Cat',
+            'id_subcat' => 'Nombre subcategotia',
+            'id_cat' => 'Nombre categoria',
         ];
     }
 

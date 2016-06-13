@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Convenio', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear convenio', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -26,7 +26,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id_convenio',
             'nombre_convenio',
-            'id_empresa',
+            [
+             'attribute' => 'id_empresa',
+             'value' =>  'idEmpresa.nombre_empresa'
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Ubicacion */
 
-$this->title = 'Update Ubicacion: ' . $model->id_ubicacion;
-$this->params['breadcrumbs'][] = ['label' => 'Ubicacions', 'url' => ['index']];
+$this->title = 'Actualizar ubicación: ' . $model->id_ubicacion;
+$this->params['breadcrumbs'][] = ['label' => 'Ubicaciones', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id_ubicacion, 'url' => ['view', 'id' => $model->id_ubicacion]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\UbicacionSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Ubicacions';
+$this->title = 'Ubicaciones';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="ubicacion-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('Create Ubicacion', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Crear ubicación', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -25,7 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id_ubicacion',
-            'id_empresa',
+            [
+             'attribute' => 'id_empresa',
+             'value' =>  'idEmpresa.nombre_empresa'
+            ],
             'direccion',
             'lat',
             'lon',

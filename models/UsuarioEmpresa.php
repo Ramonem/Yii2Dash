@@ -31,7 +31,7 @@ class UsuarioEmpresa extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['email_ue'], 'required'],
+            [['email_ue', 'id_empresa', 'password'], 'required'],
             [['id_empresa'], 'integer'],
             [['email_ue', 'nombre'], 'string', 'max' => 150],
             [['password'], 'string', 'max' => 100],
@@ -45,10 +45,10 @@ class UsuarioEmpresa extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'email_ue' => 'Email Ue',
-            'id_empresa' => 'Empresa',
-            'nombre' => 'Nombre',
-            'password' => 'Password',
+            'email_ue' => 'Email usuario empresa',
+            'id_empresa' => 'Nombre empresa',
+            'nombre' => 'Nombre usuario',
+            'password' => 'Password usuario empresa',
         ];
     }
 

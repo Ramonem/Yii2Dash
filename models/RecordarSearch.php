@@ -18,8 +18,7 @@ class RecordarSearch extends Recordar
     public function rules()
     {
         return [
-            [['id_descuento'], 'integer'],
-            [['email'], 'safe'],
+            [['email', 'id_descuento'], 'safe'],
         ];
     }
 
@@ -42,6 +41,7 @@ class RecordarSearch extends Recordar
     public function search($params)
     {
         $query = Recordar::find();
+         $query->joinWith(['idDescuento']);
 
         // add conditions that should always apply here
 
@@ -58,11 +58,8 @@ class RecordarSearch extends Recordar
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'id_descuento' => $this->id_descuento,
-        ]);
-
-        $query->andFilterWhere(['like', 'email', $this->email]);
+        $query->andFilterWhere(['like', 'email', $this->email])
+               ->andFilterWhere(['like', 'descuento.nombre', $this->id_descuento]);
 
         return $dataProvider;
     }
