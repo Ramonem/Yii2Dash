@@ -1,3 +1,10 @@
+<?php
+use yii\helpers\Html;
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+?>
+
 <aside class="main-sidebar">
 
     <section class="sidebar">
@@ -5,16 +12,47 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="<?= $directoryAsset ?>/img/user2-160x160.jpg" class="img-circle" alt="User Image"/>
+                <img src="<?= $directoryAsset ?>/img/avatar5.png" class="img-circle" alt="User Image"/>
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
 
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                <p> <?php if(!Yii::$app->user->isGuest) {
+
+                     echo Yii::$app->user->identity->email_admin;
+                     echo '<label>'
+                          . Html::beginForm(['/site/logout'], 'post', ['class' => ''])
+                          . Html::submitButton(
+                            'Logout (' . Yii::$app->user->identity->email_admin . ')',
+                              ['class' => 'btn-link'])
+                          . Html::endForm()
+                          . '</label>';
+
+                          /* echo  dmstr\widgets\Menu::widget(
+            [
+                'options' => ['class' => 'sidebar-menu'],
+                'items' => [
+                    ['label' => 'Logout (' . Yii::$app->user->identity->username . ')', 'method' => 'post', 'icon' => '', 'url' => ['/site/logout']],
+                    
+            ]]); */
+
+                     }
+                     else
+                     {
+                        echo '<label>'
+                          . Html::beginForm(['/site/login'], 'post', ['class' => ''])
+                          . Html::submitButton(
+                            'Login',
+                              ['class' => 'btn-link'])
+                          . Html::endForm()
+                          . '</label>';
+
+                     }
+                ?></p>
+              
             </div>
         </div>
 
-        <!-- search form -->
+        <!-- search form 
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
                 <input type="text" name="q" class="form-control" placeholder="Search..."/>
@@ -23,7 +61,7 @@
                 </button>
               </span>
             </div>
-        </form>
+        </form>-->
         <!-- /.search form -->
 
         <?= dmstr\widgets\Menu::widget(
@@ -33,7 +71,7 @@
                     ['label' => 'Menu', 'options' => ['class' => 'header']],
                     ['label' => 'Gii', 'icon' => 'fa fa-file-code-o', 'url' => ['/gii']],
                     ['label' => 'Debug', 'icon' => 'fa fa-dashboard', 'url' => ['/debug']],
-                    ['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest],
+                    ['label' => 'Login', 'url' => ['/site/login'], 'visible' => Yii::$app->user->isGuest],
                     [
                         'label' => 'Categoria',
                         'icon' => 'fa fa-share',

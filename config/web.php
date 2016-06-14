@@ -4,9 +4,15 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'basic',
+    'name' => 'Mis Beneficios',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'components' => [
+    'components' => [        
+        'user' => [
+            'identityClass' => 'app\models\UsuarioAdmin',
+            'enableAutoLogin' => true,//If you don't have authKey column in your DB, set enableAutoLogin field to false
+            'enableSession' => true,
+        ],
          'view' => [
              'theme' => [
                  'pathMap' => [
@@ -20,10 +26,6 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
-        ],
-        'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -45,6 +47,7 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
