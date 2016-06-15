@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $content string */
 
 
-if (Yii::$app->controller->action->id === 'login') { 
+if (Yii::$app->controller->action->id === 'login') {
 /**
- * Do not use this code in your template. Remove it. 
+ * Do not use this code in your template. Remove it.
  * Instead, use the code  $this->layout = '//main-login'; in your controller.
  */
     echo $this->render(
@@ -35,6 +35,8 @@ if (Yii::$app->controller->action->id === 'login') {
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap&key=AIzaSyDPu_L8jDEv1XTmKCfuOSytIUD_4425mj8" async defer></script>
+
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
     <?php $this->beginBody() ?>
